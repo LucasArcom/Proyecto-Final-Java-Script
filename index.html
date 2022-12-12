@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NintenShop</title>
+
+    <!-- LINK A CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ÍCONO -->
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand-sec">
+                <a href="index.html"> <img src="images/mario.png" alt="img missing" class="brand-img"> </a>
+                <a href="index.html" class="brand-txt">NintenShop</a>
+            </div>
+            
+            <ul class="nav-ul">
+                <li> <a href="index.html" class="nav-link">Inicio</a> </li>
+                <li> <a href="index.html" class="nav-link">Consolas</a> </li>
+                <li> <a href="index.html" class="nav-link">Categorías</a></li>
+            </ul>
+
+            <div class="nav-sec-2">
+                <button class="carrito" id="verCarrito"> <img src="images/carrito.jpg" alt="image missing" class="carrito-img"> </button>
+                <a href="index.html" class="login"> <img src="images/login.jpg" alt="image missing" class="login-img"> </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1> <span>NintenShop</span> <br> Tus juegos y sagas favoritas de la gran N</h1>
+        <div class="main-div">
+            <p class="console-title">Nintendo Switch</p>
+            <div class="card-box" id="switchGamesContainer"></div>
+        </div>
+
+        <div class="main-div">
+            <p class="console-title">Nintendo 3DS</p>
+            <div class="card-box" id="3dsGamesContainer"></div>
+        </div>
+
+        <div class="main-div">
+            <h2 class="total">El total de la compra es de: <span id="total"></span></h2>
+
+            <div class="final-btn-container">
+                <button class="buy-btn botonesFinales" id="vaciarCarrito">Vaciar carrito</button>
+                <button class="buy-btn botonesFinales" id="finalizarCompra">Finalizar Compra</button>
+            </div>
+
+            <div class="form-container" id="formContainer"></div>
+        </div>
+
+        <div class="carrito-title"> 
+            <p class="console-title">Carrito de Compras:</p> 
+            <div class="main-div main-div2" id="contenedorCarrito"></div>
+        </div>
+    </main>
+
+
+    <!-- SCRIPTS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+</body>
+</html>

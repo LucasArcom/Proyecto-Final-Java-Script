@@ -1,0 +1,6 @@
+[
+    {"nombre":"Super Mario Oddysey", "consola":"Nintendo Switch", "precio":10000, "imagen":"../images/caratulas/mario-oddysey.jpg", "id":"1", "cantidad":"1"},
+    {"nombre":"The Legend of Zelda: Breath of The Wild", "consola":"Nintendo Switch", "precio":12000, "imagen":"../images/caratulas/zelda-botw.jpg", "id":"2", "cantidad":"1"},
+    {"nombre":"Donkey Kong Country: Tropical Freeze", "consola":"Nintendo Switch", "precio":6000, "imagen":"../images/caratulas/donkey-kong-country.jpg", "id":"3", "cantidad":"1"},
+    {"nombre":"Splatoon 2", "consola":"Nintendo Switch", "precio":6000, "imagen":"../images/caratulas/splatoon-2.jpg", "id":"4", "cantidad":"1"}
+]
