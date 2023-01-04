@@ -14,17 +14,6 @@ fetch(listadoJuegosSwitch)
             <p class="game-info">$${juego.precio}</p>
             <button class="buy-btn" id="boton${juego.id}">Agregar al Carritio</button>
             </div>`
-
-            const boton = document.getElementById(`boton${juego.id}`);
-            boton.addEventListener("click", () => {agregarAlCarritoSwitch(juego.id)})
-            boton.addEventListener("click", () => {
-                Swal.fire( {
-                    title: "Producto agregado al carrito",
-                    text: `${juego.nombre} ha sido agregado al carrito`,
-                    confirmButtonText: "Ok"
-                })
-            })
-            
         })
     })
     .catch(error => console.log(error))
@@ -47,16 +36,6 @@ fetch(listadoJuegos3ds)
             <p class="game-info">$${juego.precio}</p>
             <button class="buy-btn" id="boton${juego.id}">Agregar al Carritio</button>
             </div>`
-
-            const boton = document.getElementById(`boton${juego.id}`);
-            boton.addEventListener("click", () => {agregarAlCarrito3ds(juego.id)})
-            boton.addEventListener("click", () => {
-                Swal.fire( {
-                    title: "Producto agregado al carrito",
-                    text: `${juego.nombre} ha sido agregado al carrito`,
-                    confirmButtonText: "Ok"
-                })
-            })
         })
     })
     .catch(error => console.log(error))
@@ -207,8 +186,10 @@ confirmar.addEventListener("click", () => {
             text: `Su compra ha sido realizada con exito, a jugar!!`,
             icon: "success",
             confirmButtonText: "Aceptar"
-
-        })
+        }).then(function(){
+            location.reload();
+            }
+            );
     })
 
     eliminarDelCarrito();
@@ -220,3 +201,44 @@ const limpiarFormulario = () => {
     const formul = document.getElementById("form");
     formul.reset();
 }
+
+// SOLUCIÓN TODOS LOS PRODUCTOS SWITCH
+fetch(listadoJuegosSwitch)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach(juego => {
+            const boton = document.getElementById(`boton${juego.id}`);
+            boton.addEventListener("click", () => {agregarAlCarritoSwitch(juego.id)})
+            boton.addEventListener("click", () => {
+                Swal.fire( {
+                    title: "Producto agregado al carrito",
+                    text: `${juego.nombre} ha sido agregado al carrito`,
+                    confirmButtonText: "Ok"
+                })
+            })
+            
+        })
+    })
+    .catch(error => console.log(error))
+    .finally( () => console.log("Los botones de switch funcionan"))
+
+
+// SOLUCIÓN TODOS LOS PRODUCTOS DE 3DS
+fetch(listadoJuegos3ds)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach(juego => {
+            const boton = document.getElementById(`boton${juego.id}`);
+            boton.addEventListener("click", () => {agregarAlCarrito3ds(juego.id)})
+            boton.addEventListener("click", () => {
+                Swal.fire( {
+                    title: "Producto agregado al carrito",
+                    text: `${juego.nombre} ha sido agregado al carrito`,
+                    confirmButtonText: "Ok"
+                })
+            })
+        })
+    })
+    .catch(error => console.log(error))
+    .finally( () => console.log("Los botones de 3ds funcionan"))
+
